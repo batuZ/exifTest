@@ -1,0 +1,20 @@
+
+<div style="height: 50px; line-height: 50px;text-align: center;border-bottom: 1px solid #171E28;">  
+    上传图片:  
+    <input type="file" accept="image/*" id="uploadImage" capture="camera" onchange="selectFileImage(this);" />  
+</div>  
+       
+http://code.ciaoca.com/javascript/exif-js/
+
+<script type="text/javascript">
+	function selectFileImage(fileObj) {  
+	var file = fileObj.files['0']; 
+
+	EXIF.getData(file, function() {  
+	    //alert(EXIF.pretty(file));
+	    //var keypar = EXIF.getAllTags(this));   
+	    alert(EXIF.getTag(this, 'GPSLatitude')); 
+	    //return;  
+	});  
+}  
+</script>
